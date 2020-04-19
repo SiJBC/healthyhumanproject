@@ -15,9 +15,9 @@ app.use(
 );
 app.use(bodyParser.json());
 
-if (process.env.NODE_ENV === 'production') {
-  // Exprees will serve up production assets
-  app.use(express.static('client/build'));
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 
 // DB Config
 const db = require("./config/keys").mongoURI;
@@ -42,4 +42,5 @@ app.use("/api/users", users);
 
 const port = process.env.PORT || 5000;
 
-app.listen(port, () => console.log(`Server up and running on port ${port} !`));
+app.listen(port, () => 
+console.log(`Server up and running on port ${port} !`));
